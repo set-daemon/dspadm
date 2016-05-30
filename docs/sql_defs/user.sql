@@ -1,11 +1,12 @@
-CREATE DATABASE IF NOT EXISTS dsp_adm_db;
+CREATE DATABASE IF NOT EXISTS `dsp_adm_db`;
 /* DROP DATABASE IF EXISTS dsp_adm_db; */
+USE `dsp_adm_db`;
 
 /*
  * 客户申请表
  */
 CREATE TABLE IF NOT EXISTS `customer_application` (
-	`app_id BIGINT` AUTO_INCREMENT,
+	`app_id` BIGINT NOT NULL AUTO_INCREMENT,
 	`corp_name` VARCHAR(129) NOT NULL,
 	`site_name` VARCHAR(129) NOT NULL,
 	`website` VARCHAR(128) NOT NULL,
@@ -23,14 +24,16 @@ CREATE TABLE IF NOT EXISTS `customer_application` (
 	`status` INTEGER NOT NULL,
 	`app_time` DATETIME NOT NULL,
 	`auditor` VARCHAR(129) NOT NULL,
-	`audit_time` DATETIME NOT NULL
+	`audit_time` DATETIME NOT NULL,
+
+	PRIMARY KEY(`app_id`)
 );
 
 /*
  * 系统运营商信息
  */
 CREATE TABLE IF NOT EXISTS `sys_operator` (
-	`corp_name` VARCHAR(129) NOT NULL UNIQUE,
+	`corp_name` VARCHAR(129) NOT NULL,
 	`website` VARCHAR(128) NOT NULL,
 	`address` VARCHAR(255) NOT NULL,
 	`zipcode` VARCHAR(9) NOT NULL,
@@ -44,13 +47,15 @@ CREATE TABLE IF NOT EXISTS `sys_operator` (
  * 系统用户信息
  */
 CREATE TABLE IF NOT EXISTS `sys_user` (
-	`user_id` INTEGER AUTO_INCREMENT,
+	`user_id` INTEGER NOT NULL AUTO_INCREMENT,
 	`role` INTEGER NOT NULL,
 	`name` VARCHAR(129) NOT NULL,
 	`email` VARCHAR(128) NOT NULL,
 	`passwd` VARCHAR(129) NOT NULL,
 	`status` INTEGER NOT NULL,
-	`join_time` DATETIME NOT NULL
+	`join_time` DATETIME NOT NULL,
+	
+	PRIMARY KEY(`user_id`)
 );
 ALTER TABLE `sys_user`  AUTO_INCREMENT=1;
 
@@ -58,7 +63,7 @@ ALTER TABLE `sys_user`  AUTO_INCREMENT=1;
  * 客户信息
  */
 CREATE TABLE IF NOT EXISTS `customer` (
-	`customer_id` INTEGER NOT NULL UNIQUE,
+	`customer_id` INTEGER NOT NULL,
 	`corp_name` VARCHAR(129) NOT NULL,
 	`address` VARCHAR(255) NOT NULL,
 	`zipcode` VARCHAR(9) NOT NULL,
@@ -73,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 	`logo` VARCHAR(128) NOT NULL,
 
 	`status` INTEGER NOT NULL,
-	`join_time` DATETIME NOT NULL,
+	`join_time` DATETIME NOT NULL
 );
 ALTER TABLE `customer`  AUTO_INCREMENT=1;
 
@@ -81,7 +86,7 @@ ALTER TABLE `customer`  AUTO_INCREMENT=1;
  * 客户用户
  */
 CREATE TABLE IF NOT EXISTS `customer_user` (
-	`user_id` INTEGER AUTO_INCREMENT,
+	`user_id` INTEGER NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(129) NOT NULL,
 	`customer_id` INTEGER NOT NULL,
 	`customer_type` INTEGER NOT NULL,
@@ -89,7 +94,9 @@ CREATE TABLE IF NOT EXISTS `customer_user` (
 	`email` VARCHAR(128) NOT NULL,
 	`passwd` VARCHAR(129) NOT NULL,
 	`status` INTEGER NOT NULL,
-	`join_time` DATETIME NOT NULL
+	`join_time` DATETIME NOT NULL,
+	
+	PRIMARY KEY(`user_id`)
 );
 ALTER TABLE `customer_user`  AUTO_INCREMENT=4026531840; /* 0xF0000000 */
 
@@ -114,6 +121,8 @@ CREATE TABLE IF NOT EXISTS `agency_customer` (
 
 	`status` INTEGER NOT NULL,
 	`join_time` DATETIME NOT NULL,
+
+	PRIMARY KEY(`customer_id`)
 );
 ALTER TABLE `agency_customer`  AUTO_INCREMENT=4026531840; /* 0xF0000000 */
 

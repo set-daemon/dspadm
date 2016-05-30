@@ -1,5 +1,6 @@
-CREATE DATABASE IF NOT EXISTS dsp_adm_db;
+CREATE DATABASE IF NOT EXISTS `dsp_adm_db`;
 /* DROP DATABASE IF EXISTS dsp_adm_db; */
+USE `dsp_adm_db`;
 
 /*
  * 客户账户

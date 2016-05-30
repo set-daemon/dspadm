@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS dsp_adm_db;
 /* DROP DATABASE IF EXISTS dsp_adm_db; */
+USE `dsp_adm_db`;
 
 /*
  * 订单
@@ -17,7 +18,9 @@ CREATE TABLE IF NOT EXISTS `order` (
 	`order_desc` VARCHAR(255) NOT NULL,
 	`status` INTEGER NOT NULL,
 	`status_alter_corp` INTEGER NOT NULL,
-	`discount` FLOAT NOT NULL
+	`discount` FLOAT NOT NULL,
+
+	PRIMARY KEY(`order_id`)
 );
 
 /*
@@ -45,7 +48,9 @@ CREATE TABLE IF NOT EXISTS `order_plan` (
 	`create_time` DATETIME NOT NULL,
 	`modify_time` DATETIME NOT NULL,
 	`status` INTEGER NOT NULL,
-	`state` INTEGER NOT NULL
+	`state` INTEGER NOT NULL,
+
+	PRIMARY KEY(`plan_id`)
 );
 
 /*
@@ -81,7 +86,9 @@ CREATE TABLE IF NOT EXISTS `order_group` (
 	`create_time` DATETIME NOT NULL,
 	`modify_time` DATETIME NOT NULL,
 	`status` INTEGER NOT NULL,
-	`state` INTEGER NOT NULL
+	`state` INTEGER NOT NULL,
+
+	PRIMARY KEY(`group_id`)
 );
 
 /*
@@ -132,6 +139,8 @@ CREATE TABLE IF NOT EXISTS `order_group` (
 	`click_efficient` INTEGER NOT NULL,
 	`slot_type` INTEGER NOT NULL,
 	`status` INTEGER NOT NULL,
+
+	PRIMARY KEY(`ad_id`)
 );
 
 /*
