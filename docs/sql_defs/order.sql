@@ -180,3 +180,13 @@ CREATE TABLE IF NOT EXISTS `dsp_admon` (
 	`track_type` INTEGER NOT NULL,
 	`track_url` VARCHAR(255) NOT NULL
 );
+
+/*
+ * 广告ADX审核数据
+ */
+CREATE TABLE IF NOT EXISTS `ad_audit_data` (
+	`ad_id` INTEGER NOT NULL,
+	`adx_id` INTEGER NOT NULL,
+	`status` INTEGER NOT NULL,
+	`audit_time` DATETIME NOT NULL
+);

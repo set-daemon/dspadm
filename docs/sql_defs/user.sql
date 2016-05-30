@@ -137,3 +137,13 @@ CREATE TABLE IF NOT EXISTS `agency_user_customer` (
 	`create_time` DATETIME NOT NULL,
 	`operator` INTEGER NOT NULL
 );
+
+/*
+ * 客户ADX审核数据
+ */
+CREATE TABLE IF NOT EXISTS `customer_audit_data` (
+	`customer_id` INTEGER NOT NULL,
+	`adx_id` INTEGER NOT NULL,
+	`status` INTEGER NOT NULL,
+	`audit_time` DATETIME NOT NULL
+);
