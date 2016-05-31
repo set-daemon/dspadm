@@ -145,5 +145,6 @@ CREATE TABLE IF NOT EXISTS `customer_audit_data` (
 	`customer_id` INTEGER NOT NULL,
 	`adx_id` INTEGER NOT NULL,
 	`status` INTEGER NOT NULL,
-	`audit_time` DATETIME NOT NULL
+	`audit_time` DATETIME NOT NULL,
+	`adx_ret` VARCHAR(16)
 );
