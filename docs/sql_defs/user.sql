@@ -63,7 +63,7 @@ ALTER TABLE `sys_user`  AUTO_INCREMENT=1;
  * 客户信息
  */
 CREATE TABLE IF NOT EXISTS `customer` (
-	`customer_id` INTEGER NOT NULL,
+	`customer_id` INTEGER NOT NULL AUTO_INCREMENT,
 	`corp_name` VARCHAR(129) NOT NULL,
 	`address` VARCHAR(255) NOT NULL,
 	`zipcode` VARCHAR(9) NOT NULL,
@@ -78,7 +78,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
 	`logo` VARCHAR(128) NOT NULL,
 
 	`status` INTEGER NOT NULL,
-	`join_time` DATETIME NOT NULL
+	`join_time` DATETIME NOT NULL,
+
+	PRIMARY KEY(`customer_id`)
 );
 ALTER TABLE `customer`  AUTO_INCREMENT=1;
 
@@ -146,5 +148,15 @@ CREATE TABLE IF NOT EXISTS `customer_audit_data` (
 	`adx_id` INTEGER NOT NULL,
 	`status` INTEGER NOT NULL,
 	`audit_time` DATETIME NOT NULL,
-	`adx_ret` VARCHAR(16)
+	`updated` INTEGER NOT NULL,
+	`update_time` DATETIME NOT NULL
+);
+
+/*
+ * 客户在ADX的标识
+ */
+CREATE TABLE IF NOT EXISTS `adx_customer` (
+	`customer_id` INTEGER NOT NULL,
+	`adx_id` INTEGER NOT NULL,
+	`adx_customer_key` VARCHAR(128),
 );
