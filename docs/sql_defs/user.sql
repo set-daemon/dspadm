@@ -159,4 +159,7 @@ CREATE TABLE IF NOT EXISTS `adx_customer` (
 	`customer_id` INTEGER NOT NULL,
 	`adx_id` INTEGER NOT NULL,
 	`adx_customer_key` VARCHAR(128),
+
+	PRIMARY KEY(`customer_id`,`adx_id`)
 );
+
