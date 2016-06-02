@@ -188,5 +188,7 @@ CREATE TABLE IF NOT EXISTS `ad_audit_data` (
 	`ad_id` INTEGER NOT NULL,
 	`adx_id` INTEGER NOT NULL,
 	`status` INTEGER NOT NULL,
-	`audit_time` DATETIME NOT NULL
+	`audit_time` DATETIME NOT NULL,
+	`updated` INTEGER NOT NULL,
+	`update_time` DATETIME NOT NULL
 );
