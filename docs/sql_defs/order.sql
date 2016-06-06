@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `adgroup_sensitive_vocation` (
 /*
  * 订单-策略表
  */
-CREATE TABLE IF NOT EXISTS `order_group` (
+CREATE TABLE IF NOT EXISTS `order_strategy` (
 	`group_id` INTEGER NOT NULL,
 	`data_type` VARCHAR(16) NOT NULL,
 	`data_name` VARCHAR(127) NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `order_group` (
 /*
  * 广告表
  */
-CREATE TABLE IF NOT EXISTS `order_group` (
+CREATE TABLE IF NOT EXISTS `order_ad` (
 	`ad_id` INTEGER NOT NULL AUTO_INCREMENT,
 
 	`group_id` INTEGER NOT NULL,
