@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `agency_customer` (
 
 	PRIMARY KEY(`customer_id`)
 );
-ALTER TABLE `agency_customer`  AUTO_INCREMENT=4026531840; /* 0xF0000000 */
+ALTER TABLE `agency_customer`  AUTO_INCREMENT=268435456; /* 0x10000000 */
 
 /*
  * 代理商的用户与客户关系
