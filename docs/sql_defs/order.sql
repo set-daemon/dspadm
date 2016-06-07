@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `order_group` (
 	`e_cpm` FLOAT NOT NULL,
 	`e_cpc` FLOAT NOT NULL,
 	`e_a` INTEGER NOT NULL,
+	`e_ctr` FLOAT NOT NULL,
 	`user_dayimps` INTEGER NOT NULL,
 	`imp_smoothing` INTEGER NOT NULL,
 
