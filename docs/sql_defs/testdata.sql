@@ -37,6 +37,7 @@ INSERT INTO `order_plan`(`order_id`,`customer_id`,`user_id`,`plan_name`,`budget`
 INSERT INTO `order_group`(`plan_id`,`order_id`,`customer_id`,`user_id`,`group_name`,`budget`, `day_budget`,`start_date`,`end_date`,`e_imps`,`e_audience`,`e_clicks`,`e_dayimps`,`e_dayclicks`,`e_cpm`,`e_cpc`,`e_a`,`e_ctr`,`user_dayimps`,`imp_smoothing`,`flow_type`,`create_time`,`modify_time`,`status`,`state`) VALUES(1, 1, 2, 1, "测试订单-20160608_1814_计划1_PC策略", 2000.0, 1000.0, "2016-06-08", "2016-06-09", 100000, 1000, 100, 50000, 50, 1.6, 0.8, 10, 0.01, 3, 1, 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), 4, 4);
 
 /* 策略数据 */
+INSERT INTO `order_strategy`(`group_id`,`data_type`,`data_name`,`data`) VALUES(1, "target", "adx", "BES"),(1, "target", "adx", "SOHU"),(1, "target", "crowdtags", "1,2,3"),(1, "target", "areas", "2b000000");
 
 /* 广告数据: PC横幅、图片广告 */
 INSERT INTO `order_ad`(`group_id`,`plan_id`,`order_id`,`customer_id`,`user_id`,`ad_name`,`ad_type`,`click_efficient`,`slot_type`,`status`) VALUES(1, 1, 1, 2,1, "测试-320x250-PC横幅", 2, 3, 1, 4)
